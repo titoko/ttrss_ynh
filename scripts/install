@@ -145,8 +145,9 @@ yunohost service add $app --description="News feed reader and aggregator" --log=
 # SETUP SSOWAT
 #=================================================
 ynh_script_progression --message="Configuring SSOwat..." --weight=1
+ynh_permission_update --permission="main" --add="visitors"
 
-ynh_app_setting_set --app=$app --key=skipped_uris --value="/public.php,/api,/opml.php?op=publish"
+
 
 #=================================================
 # RELOAD NGINX
